@@ -14,7 +14,7 @@ class FruitContainer extends Component {
     handleFilterChange = (e) => {
         e.preventDefault();
         let filterValue = e.target.value;
-        const filteredFruitList = props.fruits.filter(fruit => {
+        const filteredFruitList = this.props.fruits.filter(fruit => {
             return fruit.toLowerCase().includes(filterValue.toLowerCase());
         })
 
