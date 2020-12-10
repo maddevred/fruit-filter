@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import List from './List';
 import Input from './Input';
 
-
-
 class FruitContainer extends Component {
     constructor(props) {
         super()
         this.state = {
-
-            fruitsToDisplay: this.props.fruits,
+            fruitsToDisplay: props.fruits,
             filterValue: ''
         };
     }
@@ -17,7 +14,7 @@ class FruitContainer extends Component {
     handleFilterChange = (e) => {
         e.preventDefault();
         let filterValue = e.target.value;
-        const filteredFruitList = this.props.fruits.filter(fruit => {
+        const filteredFruitList = props.fruits.filter(fruit => {
             return fruit.toLowerCase().includes(filterValue.toLowerCase());
         })
 
@@ -25,6 +22,7 @@ class FruitContainer extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <Input value={this.state.filterValue} onChange={this.handleFilterChange}/>
